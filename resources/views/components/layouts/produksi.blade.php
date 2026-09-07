@@ -1,10 +1,11 @@
 @props(['title' => null])
 
+{{-- Pola A: struktur header sama, data dari config → pakai <x-navbar> --}}
 <x-layouts.base :title="$title">
     <x-slot:header>
         <x-navbar
-            brand="🏭 Chirper Produksi"
-            :links="['Dashboard' => '#', 'Laporan' => '#', 'Stok' => '#']"
+            :brand="config('navigation.produksi.brand')"
+            :links="config('navigation.produksi.links')"
             class="bg-primary text-primary-content"
         />
     </x-slot:header>

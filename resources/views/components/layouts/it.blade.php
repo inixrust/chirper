@@ -1,11 +1,11 @@
 @props(['title' => null])
 
+{{-- Pola B: struktur header beda → komponen header khusus <x-headers.it> --}}
 <x-layouts.base :title="$title">
     <x-slot:header>
-        <x-navbar
-            brand="💻 Chirper IT"
-            :links="['Tiket' => '#', 'Server' => '#', 'Docs' => '#']"
-            class="bg-neutral text-neutral-content"
+        <x-headers.it
+            :brand="config('navigation.it.brand')"
+            :links="config('navigation.it.links')"
         />
     </x-slot:header>
 
